@@ -1,0 +1,9 @@
+<form>
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" [(ngModel)]="employee.name" />
+    <br />
+<label for="position">Position:</label>
+    <input id="position" name="position" type="text" [(ngModel)]="employee.position"/>
+    <br />
+    <button (click)="saveEmployee()">Save</button>
+</form>

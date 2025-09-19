@@ -1,0 +1,10 @@
+@for (item of employees$ | async; track $index) {
+    <div>{{item.name}} - {{item.position}}</div>
+    <button (click)="editEmployee(item.id)">Edit</button>
+    <button (click)="deleteEmployee(item.id)">Delete</button>
+}
+<br/>
+<br/>
+<br/>
+
+<button (click)="addEmployee()">Add Employee</button>
