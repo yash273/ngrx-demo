@@ -1,0 +1,58 @@
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 1;
+    padding: .5rem
+}
+
+select {
+    padding: .5rem
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.media img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.body {
+    padding: .75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+button {
+    background: #0b78e3;
+    color: white;
+    border: none;
+    padding: .4rem .6rem;
+    border-radius: 4px;
+    cursor: pointer;
+}

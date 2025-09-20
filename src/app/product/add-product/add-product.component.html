@@ -1,0 +1,21 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" name="name" required />
+
+    <label for="description">Description</label>
+    <input type="text" type="description" formControlName="description" name="description" required />
+
+    <label for="price">Price</label>
+    <input type="number" formControlName="price" name="price" required />
+
+    <label for="category">Category</label>
+    <select name="category" formControlName="category" required>
+        @for ( cat of categories$ | async; track $index) {
+        <option [value]="cat"> {{cat}}</option>
+        }
+    </select>
+
+    <button type="submit"> Submit</button>
+
+</form>

@@ -1,1 +1,16 @@
-<router-outlet />
+<div class="app-shell">
+    <header class="topbar">
+      <h1>E-Commerce Storefront</h1>
+      <a routerLink="/add-product" class="btn">Add Product</a>
+    </header>
+
+    <main class="main">
+      <section class="list-area">
+        <router-outlet></router-outlet>
+      </section>
+
+      <aside class="cart-area">
+        <!-- <cart-component></cart-component> -->
+      </aside>
+    </main>
+  </div>

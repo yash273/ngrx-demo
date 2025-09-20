@@ -1,1 +1,25 @@
-<p>product-list works!</p>
+<div class="control">
+    <input placeholder="Search Product ... " [formControl]="searchControl"/>
+    <select name="category" [formControl]="categoryControl">
+        @for (cat of categories$ | async; track $index) {
+            <option [value]="cat">{{cat}}</option>
+        }
+    </select>
+</div>
+
+<div class="grid">
+    @for (product of product$ | async; track $index) {
+
+    <div class="card">
+        <div class="body">
+            <h3>{{product.name}}</h3>
+            <p>{{product.category}}</p>
+            <p>{{product.description}}</p>
+            <div class="meta">
+                <strong>${{product.price}}</strong>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
