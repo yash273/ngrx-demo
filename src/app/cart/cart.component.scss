@@ -1,0 +1,28 @@
+   .cart {
+       border: 1px solid #eee;
+       padding: 1rem;
+       border-radius: 6px;
+   }
+
+   .item {
+       border-bottom: 1px dashed #eee;
+       padding: .5rem 0;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .controls {
+       display: flex;
+       gap: .5rem;
+       align-items: center;
+   }
+
+   button {
+       padding: .25rem .5rem;
+   }
+
+   .total {
+       margin-top: 1rem;
+       font-weight: 600;
+   }

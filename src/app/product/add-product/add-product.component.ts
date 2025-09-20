@@ -43,11 +43,21 @@ export class AddProductComponent {
         price: this.productForm.value.price ?? 0,
         description: this.productForm.value.description ?? '',
         category: this.productForm.value.category ?? ''
-
       }
       this.store.dispatch(addProduct({ product }));
       this.router.navigate(['/products']);
     }
+  }
+
+  onCancel() {
+    this.router.navigate(['/products']);
+    const product = {
+      name: '',
+      price: 0,
+      description: '',
+      category: 'All'
+    };
+    this.productForm.setValue(product);
   }
 
 

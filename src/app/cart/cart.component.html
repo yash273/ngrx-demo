@@ -1,0 +1,31 @@
+<div class="cart">
+    <h3>Shopping Cart</h3>
+    @if (((items$ |async)?.length === 0) && (total$ | async) === 0) {
+    <div>Cart is Empty</div>
+    } @else {
+
+    @for (entry of items$ | async; track $index) {
+    @if (entry.quantity !== 0) {
+
+    <div class="item">
+        <div class="title">{{entry.product.name}}</div>
+        <div class="controls">
+            <button (click)="decrease(entry.product.id, entry.quantity)">-</button>
+            <span>{{entry.quantity}}</span>
+            <button (click)="increase(entry.product.id, entry.quantity)">+</button>
+            <button (click)="remove(entry.product.id)">Remove</button>
+        </div>
+        <div class="price">${{(entry.product.price * entry.quantity) | number:'1.2-2'}}</div>
+    </div>
+    }
+    }
+
+    @if ((total$ | async) !== 0) {
+
+    <div class="total">Total: ${{ total$ | async | number:'1.2-2' }}</div>
+    <button (click)="checkout()">Checkout</button>
+    }
+
+    }
+
+</div>

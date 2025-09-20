@@ -5,6 +5,8 @@
             <option [value]="cat">{{cat}}</option>
         }
     </select>
+        <button type="button" (click)="onReset()"> Reset</button>
+
 </div>
 
 <div class="grid">
@@ -17,6 +19,7 @@
             <p>{{product.description}}</p>
             <div class="meta">
                 <strong>${{product.price}}</strong>
+                <button (click)="addToCart(product.id)">Add To Cart</button>
             </div>
         </div>
     </div>

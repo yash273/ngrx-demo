@@ -1,0 +1,33 @@
+  .app-shell {
+      font-family: Arial, sans-serif;
+  }
+
+  .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+  }
+
+  .main {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+  }
+
+  .list-area {
+      flex: 1;
+  }
+
+  .cart-area {
+      width: 320px;
+  }
+
+  .btn {
+      padding: .5rem .75rem;
+      background: #2d7cf7;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+  }

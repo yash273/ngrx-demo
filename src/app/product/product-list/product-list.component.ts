@@ -4,6 +4,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, Observable, Subject, takeUntil } from 'rxjs';
 import { Product } from '../../models/product.model';
+import { addToCart } from '../../store/cart/cart.actions';
 import { setCategory, setSearch } from '../../store/products/product.actions';
 import { selectCategories, selectFilteredProduct } from '../../store/products/product.selectors';
 
@@ -28,10 +29,7 @@ export class ProductListComponent {
   }
 
   ngOnInit() {
-
-    this.store.dispatch(setSearch({ search: '' }));
-    this.store.dispatch(setCategory({ category: 'All' }));
-
+    this.onReset();
     this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -48,9 +46,20 @@ export class ProductListComponent {
     })
   }
 
+  onReset() {
+    this.store.dispatch(setSearch({ search: '' }));
+    this.store.dispatch(setCategory({ category: 'All' }));
+    this.searchControl.setValue('');
+    this.categoryControl.setValue('All');
+  }
+
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  addToCart(id: string | number) {
+    this.store.dispatch(addToCart({ productId: id }))
   }
 
 }
